@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Footer, Header, Content } from './components'
+import { Routes, Route}from "react-router";
+import Main from './components/Main';
+import {listItems} from './components/LeftMenu';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+
+      
+        <Routes>
+          <Route path="/" element={<Content/>} >
+            <Route index element={<Main />} />
+            {
+              listItems.map(item =>
+                (
+                  <Route path={item.link} element={<h2>{item.name}</h2>}/>
+                )
+              )
+            }
+            
+            { <Route path="*" element={<div>Not valid path</div>} /> }
+          </Route>
+        </Routes>
+
+      <Footer />
     </div>
   );
 }
