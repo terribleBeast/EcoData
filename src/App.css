@@ -1,4 +1,24 @@
+/* html {
+
+  --font-base: 1rem;
+  --font-small: 0.875rem;
+  --font-large: 1.25rem;
+} */
+
+/* .MuiTypography-root {
+  font-size: 16pt;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--color-text);
+} */
+
+
+/*
+
+Разобраться с css MuiTypography
+*/
 .App {
+
+  /* font-size: 16px; */
 
   margin: 0;
 
@@ -24,8 +44,6 @@
   --color-menu-bg: #F5F5F5;
   --color-menu-hover: #E0F2F1;
   --color-active-item: #C8E6C9;
-  /* text-align: center; */
-
 
   /* Шрифты */
   --font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -40,31 +58,15 @@
   align-items: center; */
 }
 
-/* .App-header {
-  background-color: #282c34;
- 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
- 
-  color: white;
-} */
 
-/* .App-link {
-  color: #61dafb;
-} */
-
-
-.Body {
+main {
   min-height: 100vh;
+  display: flex;
   background-color: var(--color-background);
   font-family: var(--font-family);
   color: var(--color-text);
   margin: 0;
   padding: 0;
-
-  display: inline-block;
 }
 
 header {
@@ -72,49 +74,8 @@ header {
   color: white;
 }
 
-nav {
-  background-color: var(--color-menu-bg);
-  width: 240px;
-  min-height: 100vh;
-  padding: 1rem;
-  box-shadow: inset -1px 0 0 var(--color-border);
-}
 
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav li {
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-  /* transition: background 0.2s; */
-}
-
-nav li:hover {
-  background-color: var(--color-menu-hover);
-}
-
-nav li.active {
-  background-color: var(--color-active-item);
-  font-weight: 600;
-}
-
-.main-content {
-  padding: 2rem;
-  background-color: var(--color-surface);
-}
-
-.card {
-  background: var(--color-surface);
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-
+/* 
 .button-primary {
   background-color: var(--color-accent);
   color: white;
@@ -123,12 +84,8 @@ nav li.active {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  /* transition: background 0.3s; */
-}
-
-/* .button-primary:hover {
-  background-color: var(--color-primary-dark);
 } */
+
 
 .footer {
   padding: 1rem;
@@ -141,8 +98,7 @@ nav li.active {
 }
 
 
-/* dddddddddddddddddddddddddddddddddddddddddddddd */
-
+/* Left menu */
 .sidebar {
   width: auto;
   background-color: var(--color-menu-bg);
@@ -158,9 +114,8 @@ nav li.active {
   gap: 1rem;
   padding: 0.75rem 1rem;
   cursor: pointer;
-  /* border-collapse: collapse; */
- border-bottom: 1px solid var(--color-border);
-  /* border-radius: 8px; */ 
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 8px;
   margin: 0 0.5rem 0.25rem 0.5rem;
   color: var(--color-text);
 }
@@ -169,17 +124,128 @@ nav li.active {
   background-color: var(--color-menu-hover);
 }
 
-.sidebar .listItemButton.active {
+.sidebar .listItemButton.Mui-selected {
   background-color: var(--color-active-item);
   font-weight: 600;
 }
 
-
 .sidebar .listItemButton::after {
   display: block;
-  border-bottom: 1px solid var(--color-border);
   margin-top: 0.5rem;
 }
-.sidebar .listItemButton:last-child::after {
-  display: none;
+
+
+/* Auth form */
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f2f3f5;
+  padding: 2rem;
+}
+
+
+.auth .auth-form-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.auth .auth-logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/* 
+.auth-logo img {
+  height: 48px;
+} */
+
+
+
+.login-form,
+.reg-form {
+
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth .login-form-title,
+.auth .reg-form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+
+
+.login-input,
+.reg-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus,
+.reg-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.login-button.MuiButton-root,
+.reg-button.MuiButton-root {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.825rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.login-button.MuiButton-root:hover,
+.reg-button.MuiButton-root:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.forgot-password {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #1a56db;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
 }

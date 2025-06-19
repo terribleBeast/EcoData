@@ -2,18 +2,24 @@
 import { Box } from '@mui/material'
 import LeftMenu from '../LeftMenu';
 import { Outlet } from 'react-router';
-
+import Footer from './Footer';
+import Header from './Header';
 function Content({ children }) {
 
 
 
     return (
-        <main className="Body" style={{ display: "flex" }}>
-            <LeftMenu></LeftMenu>
-            <Box>
-                <Outlet />
-            </Box>
-        </main>
+        <Box >
+            <Header />
+
+            <main >
+                <LeftMenu></LeftMenu>
+                <Box>
+                    <Outlet />
+                </Box>
+            </main>
+            <Footer />
+        </Box>
     )
 }
 

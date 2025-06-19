@@ -6,7 +6,7 @@ function Footer() {
         <footer>
             
             <div className="footer" >
-                <Typography>© EcoData 2025</Typography>
+                <Typography>© Altai State University, 2025</Typography>
                 <Typography>Контакты: ecodataHelper@gmail.com</Typography>
             </div>
         </footer>

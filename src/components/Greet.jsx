@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 
-const Main = () => {
+const Greet = () => {
     return (
         <Box>
             <h2 className='page-title'>Добро пожаловать!</h2>
@@ -11,4 +11,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Greet;
