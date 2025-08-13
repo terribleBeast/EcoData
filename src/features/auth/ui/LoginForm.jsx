@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { Button, Grid, TextField, Typography } from "@mui/material"
 import { useNavigate } from 'react-router'
-import { useCallback, useState } from "react"
+import { useCallback} from "react"
 import { useDispatch } from "react-redux"
 
 // import { toLogIn } from "../features/user/userSlice"
@@ -14,13 +14,13 @@ const LoginForm = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [message, setMessage] = useState('')
+  // const [message, setMessage] = useState('')
 
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
     watch
   } = useForm();
 
@@ -58,7 +58,7 @@ const LoginForm = () => {
 
 
 
-  }, [email, password])
+  }, [email, password, dispatch, getUser, navigate])
 
 
   return (
@@ -68,8 +68,8 @@ const LoginForm = () => {
         Вход
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid>
-          <Grid item >
+        <Grid >
+          <Grid  item>
             <Typography>
               Email
             </Typography>
@@ -85,9 +85,9 @@ const LoginForm = () => {
               variant="outlined"
             />
           </Grid>
-          <Grid item >
+          <Grid  item>
             <Typography>
-              Password
+              Пароль
             </Typography>
             <TextField {
               ...register('password',

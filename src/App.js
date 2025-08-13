@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Footer, Header, Content } from './components'
+import { Content } from './components'
 import { Routes, Route } from "react-router";
-import Greet from './components/Greet';
+import Home from './components/pages/Home';
+
 import { entities } from './entities';
 import AuthForm from './components/pages/Auth';
 
@@ -11,11 +12,12 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Content />} >
-          <Route index element={<Greet />} />
+          <Route index element={<Home />} />
+          
           {
-            entities.map(item =>
+            entities.map((item, index) =>
             (
-              <Route path={item.link} element={item.page === undefined ? <h2>{item.name}</h2> : item.page} />
+              <Route path={item.link} element={ <h2 className="tmp-page">{item.name}</h2>} key={index}/>
             )
             )
           }

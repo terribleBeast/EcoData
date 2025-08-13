@@ -1,4 +1,4 @@
-import { Biotech, PeopleAlt, Grass, LocationOn, ContentPaste, ImageSearch } from '@mui/icons-material';
+import { Biotech, PeopleAlt, Grass, LocationOn, Assignment, ImageSearch } from '@mui/icons-material';
 import Research from '../src/components/pages/Research'
 import Analyzer from './components/pages/Analyzer';
 
@@ -7,12 +7,12 @@ export const entities = [
     {
         name: "Исследования",
         link: "researches",
-        icon: <ContentPaste />,
+        icon: <Assignment />,
         page: <Research />
     },
     {
         name: "Исследователи",
-        link: "reserchers",
+        link: "researchers",
         icon: <PeopleAlt />,
     },
     {

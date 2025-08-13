@@ -4,7 +4,7 @@ import LeftMenu from '../LeftMenu';
 import { Outlet } from 'react-router';
 import Footer from './Footer';
 import Header from './Header';
-function Content({ children }) {
+function Content() {
 
 
 
@@ -14,9 +14,10 @@ function Content({ children }) {
 
             <main >
                 <LeftMenu></LeftMenu>
-                <Box>
-                    <Outlet />
-                </Box>
+                <div className="tmp-page">
+                    <Outlet/>
+                </div>
+           
             </main>
             <Footer />
         </Box>

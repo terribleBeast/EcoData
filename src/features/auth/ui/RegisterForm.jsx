@@ -57,7 +57,7 @@ const RegisterForm = () => {
                 <Grid>
                     <Grid item >
                         <Typography>
-                            Name
+                            Имя
                         </Typography>
                         <TextField {
                             ...register('name', {
@@ -86,7 +86,7 @@ const RegisterForm = () => {
                     </Grid>
                     <Grid item >
                         <Typography>
-                            Password
+                            Пароль
                         </Typography>
                         <TextField {
                             ...register('password',

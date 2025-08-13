@@ -6,8 +6,6 @@ import { Link } from 'react-router';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserIsLogIn, selectUserName, toLogOut } from '../../features/user/userSlice';
-import { useEffect } from 'react';
-
 
 
 
@@ -20,7 +18,7 @@ function Header() {
 
     return (
         <header>
-            <AppBar position="static" class="AppBar">
+            <AppBar position="static" className="AppBar">
                 <Toolbar>
                     <IconButton
                         size="large"
